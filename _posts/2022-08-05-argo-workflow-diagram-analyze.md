@@ -13,7 +13,7 @@ title: "Argo Workflow 전체 다이어그램 분석"
 # 구성 요소 분석
 ## CLI
 ### `kubectl CLI` 를 통해 k8s API 로 접근할 수 있다. 
-이것은 k3d 로 argo 를 실행시켰을 때 평범한 k8s API 로 pod, config 등을 찾을 수 있다는 내용과 일치한다. (편리하다)  
+이것은 k3d 로 argo 를 실행시켰을 때 평범한 k8s API 로 pod, config 등을 찾었던 경험과 일치한다. (편리하다)  
 ### 별도의 `Argo CLI` 가 위치한다.
 `make cli` 로 생성했을 시 dist 에 생성되는 argo 전용 명령셋이다.
 
