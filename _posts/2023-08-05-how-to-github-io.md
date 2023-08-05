@@ -4,8 +4,7 @@ title: "github.io 블로그 만드는 법"
 ---
 
 # github.io 블로그 운영
-github.io 블로그를 만들고 관리할 수 있는 방법에 대해서 남겨본다.
-
+github.io 블로그를 만들고 관리할 수 있는 방법에 대해서 간단하게 남겨본다.  
 (정확히는 jekyll, 그 중에서도 [Minimal Mistakes Jekyll Theme](https://github.com/mmistakes/minimal-mistakes) 을 이용하여 만드는 법이 되겠다.)
 
 다른 블로그에도 많이 소개되어 있지만 스스로 확인할 목적으로 중복해서 남긴다.  
