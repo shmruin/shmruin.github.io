@@ -297,10 +297,7 @@ TL;DR
 
 쿠버네티스에서 사용되는 yaml 파일들을 템플릿처럼 사용하여 조합하는 일종의 generator 로 판단된다.  
 (그리고 계층 구조를 만들어서 각 배포 단계에 따라 구분하여 빌드할 수도 있다)  
-docs 페이지가 잘 만들어졌는데 https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/ 에서 확인 가능하다.
-
-<br/>
-
+docs 페이지가 잘 만들어졌는데 [공식 documentation](khttps://kubectl.docs.kubernetes.io/guides/introduction/kustomize/) 에서 확인 가능하다.
 
 되돌아오면, manifests 는 kustomize 로 뭘 수행하는가? 하는 의문점이 남는다.  
 예를 들어 하나의 명령만 살펴보면.
