@@ -99,12 +99,12 @@ types: check-pwd pkg/apis/workflow/v1alpha1/generated.proto pkg/apis/workflow/v1
 	* 즉, 이 명령이 실행되는 위치가 위와 같은 위치로 고정되어야 한다는 것을 의미한다.
 	* codegen 실행 시 위에 경로가 아니면 항상 경고가 뜨는 이유.
 	* 왜? 에 대해서는 codegen 제약 사항과 연관이 있어보이는데, 예전에 codegen 빌드 실패 시 발견한 로그(protoc)와 연관이 있어 보인다.
-	* 
 		>  /home/vscode/go/src/github.com/argoproj/argo-workflows/vendor/k8s.io/apimachinery/pkg/util/intstr/generated.proto: File does not reside within any path specified using --proto_path (or -I).  You must specify a --proto_path which encompasses this file.  Note that the proto_path must be an exact prefix of the .proto file names -- protoc is too dumb to figure out when two paths (e.g. absolute and relative) are equivalent (it's harder than you think).
 
 <br/>
 
 * **pkg/apis/workflow/v1alpha1/generated.proto**
+
 ```make
 pkg/apis/workflow/v1alpha1/generated.proto: $(GOPATH)/bin/go-to-protobuf $(PROTO_BINARIES) $(TYPES) $(GOPATH)/src/github.com/gogo/protobuf
 
@@ -131,6 +131,7 @@ argo workflow 의 grpc 는 이 단계에서 빌드된다.
 <br/>
 
 * **pkg/apis/workflow/v1alpha1/openapi_generated.go**
+
 ```make
 pkg/apis/workflow/v1alpha1/openapi_generated.go: $(GOPATH)/bin/openapi-gen $(TYPES)
 
@@ -152,6 +153,7 @@ OpenAPI 스펙을 생성하기 위한 커맨드로 보인다.
 <br/>
 
 * **pkg/apis/workflow/v1alpha1/zz_generated.deepcopy.go**
+
 ```make
 # generates many other files (listers, informers, client etc).
 pkg/apis/workflow/v1alpha1/zz_generated.deepcopy.go: $(TYPES)
