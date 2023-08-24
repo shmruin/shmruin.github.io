@@ -298,7 +298,7 @@ TL;DR
 
 쿠버네티스에서 사용되는 yaml 파일들을 템플릿처럼 사용하여 조합하는 일종의 generator 로 판단된다.  
 (그리고 계층 구조를 만들어서 각 배포 단계에 따라 구분하여 빌드할 수도 있다)  
-docs 페이지가 잘 만들어졌는데 [공식 documentation](khttps://kubectl.docs.kubernetes.io/guides/introduction/kustomize/) 에서 확인 가능하다.
+다행히 docs 페이지가 잘 만들어졌는데... [공식 documentation](https://kubectl.docs.kubernetes.io/guides/introduction/kustomize/) 에서 좀 더 자세한 내용을 알 수 있다.
 
 되돌아오면, manifests 는 kustomize 로 뭘 수행하는가? 하는 의문점이 남는다.  
 예를 들어 하나의 명령만 살펴보면.
@@ -345,11 +345,11 @@ go install github.com/vektra/mockery/v2@v2.10.0
 
 $GOPATH 아래에 `mockery` 툴이 인스톨되어 있는지 확인하고 없다면 인스톨한다.
 
-https://github.com/vektra/mockery
+[https://github.com/vektra/mockery](https://github.com/vektra/mockery)
 
 Golang Interface 를 위한 mock 을 생성해주는 패키지라고 하는데 단위테스트에 쓰이는 Go 패키지인듯.
 
-https://zaccoding.tistory.com/43
+[https://zaccoding.tistory.com/43](https://zaccoding.tistory.com/43)
 
 이 블로그에서 사용법을 확인할 수 있었는데 확실히 아래와 같은 형태의 생성된 코드를 argo workflow 에서 종종 본 것 같다.
 
@@ -377,7 +377,7 @@ env ARGO_SECURE=false ARGO_INSECURE_SKIP_VERIFY=false ARGO_SERVER= ARGO_INSTANCE
 
 타겟은 `docs/fields.md` 파일을 생성하거나 업데이트 시키는 것이다.  
 해당 파일은 swagger.json 및 examples 폴더 아래 모든 파일, 그리고 docgen.go 라는 스크립트를 의존성으로 갖는다.   즉, 위 의존성 타겟들이 재생성된다면 `docs/fields.md` 도 업데이트 된다.  
-이 파일을 생성하기 위해서는 ./hack docgen 을 실행하는 것으로 보이는데. 결론적으로 docs/fields.md 파일은 아래와 같다.
+이 파일을 생성하기 위해서는 `./hack docgen` 을 실행하는 것으로 보이는데. 결론적으로 docs/fields.md 파일은 아래와 같다.
 
 ```md
 # Field Reference
