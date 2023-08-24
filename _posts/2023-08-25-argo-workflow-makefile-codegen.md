@@ -456,6 +456,8 @@ make --directory sdks/python generate
 이하 두 개의 별도 make 는 SDK 생성에 관한 Makefile 실행이다.  
 argo workflow 내 sdk 디렉토리에는 아래 스크린샷처럼 java 와 python, 두 개의 sdk 가 존재하고, 각각이 별도의 Makefile 을 가지고 있다.
 
+![argo-workflow-overview](../assets/imgs/argo_workflow_ss.png)
+
 즉, codegen 시에는 이 sdk 도 빌드가 되고, 이 과정에서도 꽤 시간이 걸릴 수 있다는 의미다.  
 (그래서 각 sdk 의 CONTRIBUTING.md 에는 `make it fase` 라고 상단에 강조되어 있다. 매번 쓰는 codegen 은 빌드가 빨라야 되니...)
 
