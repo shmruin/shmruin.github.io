@@ -305,7 +305,9 @@ docs 페이지가 잘 만들어졌는데 https://kubectl.docs.kubernetes.io/guid
 되돌아오면, manifests 는 kustomize 로 뭘 수행하는가? 하는 의문점이 남는다.  
 예를 들어 하나의 명령만 살펴보면.
 
-> kubectl kustomize --load-restrictor=LoadRestrictionsNone manifests/quick-start/postgres | ./hack/auto-gen-msg.sh > manifests/quick-start-postgres.yaml
+```
+kubectl kustomize --load-restrictor=LoadRestrictionsNone manifests/quick-start/postgres | ./hack/auto-gen-msg.sh > manifests/quick-start-postgres.yaml
+```
 
 이런 형태인데, 빌드의 소스가 되는 것은 `manifests/quick-start/postgres` 일 것이다.  
 이것은 디렉토리 위치를 나타내는데 manifests/quick-start/postgres 아래에는 kustomization.yaml 이라는 파일이 존재하고 여러 연관된 파일이 같이 위치한다.  
