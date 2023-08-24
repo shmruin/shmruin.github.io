@@ -96,7 +96,7 @@ types: check-pwd pkg/apis/workflow/v1alpha1/generated.proto pkg/apis/workflow/v1
 
 * **check-pwd**
 	* 현재 경로(pwd)가 SRC 인지 확인하는데, 아니면 경고를 출력한다.
-	* SRC 는 $(GOPATH)/src/github.com/argoproj/argo-workflows 로 설정되어 있다.
+	* SRC 는 `$(GOPATH)/src/github.com/argoproj/argo-workflows` 로 설정되어 있다.
 	* 즉, 이 명령이 실행되는 위치가 위와 같은 위치로 고정되어야 한다는 것을 의미한다.
 	* codegen 실행 시 위에 경로가 아니면 항상 경고가 뜨는 이유.
 	* 왜? 에 대해서는 codegen 제약 사항과 연관이 있어보이는데, 예전에 codegen 빌드 실패 시 발견한 로그(protoc)와 연관이 있어 보인다.
