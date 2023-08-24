@@ -331,7 +331,7 @@ cat
 
 ### dist/manifests/%
 
-먼저 sed 커맨드를 통해서 latest 로 되어 있는 내용을 특정 버전으로 변경해주고 (아마도 latest 버전 사용을 막기 위해서...?), `kustomize` 로 최종 생성되었던 yaml 파일들을 `dist/manifests` 폴더에 저장시킨다.  
+먼저 sed 커맨드를 통해서 latest 로 되어 있는 내용을 특정 버전으로 변경해주고 (아마도 latest 버전명 사용을 막기 위해서...?), `kustomize` 로 최종 생성되었던 yaml 파일들을 `dist/manifests` 폴더에 저장시킨다.  
 
 결과적으로 `manifests` 커맨드 수행이 완료되면 dist/manifests 에 완성된 yaml 파일들이 쌓인다!
 
