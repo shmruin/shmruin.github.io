@@ -461,23 +461,24 @@ argo workflow 내 sdk 디렉토리에는 아래 스크린샷처럼 java 와 pyth
 ![argo-workflow-overview](../assets/imgs/argo_workflow_ss.png)
 
 즉, codegen 시에는 이 sdk 도 빌드가 되고, 이 과정에서도 꽤 시간이 걸릴 수 있다는 의미다.  
-(그래서 각 sdk 의 CONTRIBUTING.md 에는 `make it fase` 라고 상단에 강조되어 있다. 매번 쓰는 codegen 은 빌드가 빨라야 되니...)
+(그래서 각 sdk 의 CONTRIBUTING.md 에는 `make it fast` 라고 상단에 강조되어 있다. 매번 쓰는 codegen 은 빌드가 빨라야 되니...)
 
 이 sdk 는 각각 argo workflow 를 각각 java 와 python 형태의 [클라이언트 라이브러리](https://argoproj.github.io/argo-workflows/client-libraries/)로 쓸 수 있게 해준다.  
+
 codegen 커맨드를 통해 각 sdk 가 makefile 을 통해 최신화 되니, 해당 언어를 쓰는 사용자도 매번 최신화된 sdk 를 통해 restful api 요청을 안심하고 쓸 수 있을 것이라고 생각해볼 수 있겠다.
 
 # 정리
 
 `make codegen` 이 하는 일은 처음 예상처럼 단순 문서 생성은 아닌 것으로 확인했다.
 
-말 그대로 코드 생성과 관련된 잡다한 커맨드는 모두 포함되어 있는데, 최종적으로는 이런 코드 생성을 기반으로 문서 역시 생성하는 Make 명령이다.
+말 그대로 코드 생성과 관련된 잡다한 커맨드는 모두 포함되어 있는데, 최종적으로는 이런 코드 생성을 기반으로 문서 역시 생성해주는 Make 명령이다.
 
 따라서 역할만 정리하자면 아래와 같다.
 
 * protoc 를 통한 proto buffer 컴파일 (grpc)
 * 필요한 yaml 리소스 생성 (kustomize)
 * 테스트를 위한 mock 생성
-* 문서 자동 생성
+* 각종 문서 자동 생성
 * go generate
 * sdk make
 
@@ -493,6 +494,7 @@ touch dist/pre-commit
 ```
 
 이 과정도 codegen 이 포함되고, lint 와 docs 가 추가로 들어간다.  
+(`make test` 가 제외된 것은 구동 환경에 영향을 받지 않기 위해서이지 않을까.)  
 그래서 오래 걸리는 작업이고, argo workflow 의 디렉토리 위치가 codegen 요구사항과 다르다면 에러가 날 것이다.
 
 하지만 종종 codegen (또는 pre-commit) 을 수행하지 않고 push 한 것인지 pull 을 새로 받고 codegen 을 실행했을 때 새롭게 코드나 문서로 들어오는 항목들을 볼 수 있다.  
