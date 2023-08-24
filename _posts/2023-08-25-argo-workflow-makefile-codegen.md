@@ -19,7 +19,8 @@ make --directory sdks/python generate
 
 # 실행
 
-`make codegen` 으로 make 명령 실행. 별도의 devcontainer 와 같은 환경이 필요하지 않다.
+`make codegen` 으로 make 명령 실행.  
+별도의 devcontainer 와 같은 환경이 필요하지 않다.  
 그냥 Makefile 과 동일한 위치에서 해당 커맨드를 실행하는 것만으로 정상 동작해야 한다.
 
 
